@@ -1,3 +1,14 @@
+![ico17](https://github.com/remyeltorro/step_by_step_ks/actions/workflows/test.yml/badge.svg)
+![ico4](https://img.shields.io/pypi/v/step_by_step_ks)
+![ico6](https://img.shields.io/github/downloads/remyeltorro/step_by_step_ks/total)
+![ico5](https://img.shields.io/pypi/dm/step_by_step_ks)
+![GitHub repo size](https://img.shields.io/github/repo-size/remyeltorro/step_by_step_ks)
+![GitHub License](https://img.shields.io/github/license/remyeltorro/step_by_step_ks?link=https%3A%2F%2Fgithub.com%2Fremyeltorro%step_by_step_ks%2Fblob%2Fmain%2FLICENSE)
+![ico2](https://img.shields.io/github/forks/remyeltorro/step_by_step_ks?link=https%3A%2F%2Fgithub.com%2Fremyeltorro%step_by_step_ks%2Fforks)
+![ico3](https://img.shields.io/github/stars/remyeltorro/step_by_step_ks?link=https%3A%2F%2Fgithub.com%2Fremyeltorro%step_by_step_ks%2Fstargazers)
+
+
+
 This Python package performs a 2-sample Kolmogorov-Smirnov test, step by step and supported by figures. The p-value is computed using a customizable bootstrap method. 
 
 Installation
