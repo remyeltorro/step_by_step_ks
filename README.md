@@ -1,6 +1,5 @@
 ![ico17](https://github.com/remyeltorro/step_by_step_ks/actions/workflows/test.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/remyeltorro/step_by_step_ks)
-![GitHub License](https://img.shields.io/github/license/remyeltorro/step_by_step_ks?link=https%3A%2F%2Fgithub.com%2Fremyeltorro%step_by_step_ks%2Fblob%2Fmain%2FLICENSE)
 ![ico2](https://img.shields.io/github/forks/remyeltorro/step_by_step_ks?link=https%3A%2F%2Fgithub.com%2Fremyeltorro%step_by_step_ks%2Fforks)
 ![ico3](https://img.shields.io/github/stars/remyeltorro/step_by_step_ks?link=https%3A%2F%2Fgithub.com%2Fremyeltorro%step_by_step_ks%2Fstargazers)
 
