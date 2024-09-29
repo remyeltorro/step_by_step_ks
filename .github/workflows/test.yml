@@ -38,7 +38,7 @@ jobs:
           pip install setuptools wheel PyQt5
       - name: Install package
         run: |
-          pip install "."
+          pip3 install -e "."
       - name: Test package
         run: |
           python -m unittest
@@ -70,7 +70,7 @@ jobs:
           pip install setuptools wheel PyQt5
       - name: Install package
         run: |
-          pip install -e "."
+          pip3 install -e "."
       - name: Test package
         run: |
           python -m unittest
