@@ -28,7 +28,7 @@ jobs:
           pip cache purge
       - name: Install package
         run: |
-          pip install -e "."
+          python -m pip install -e "."
       - name: Test package
         run: |
           python -m unittest
@@ -60,7 +60,7 @@ jobs:
           pip install setuptools wheel
       - name: Install package
         run: |
-          pip install -e "."
+          python -m pip install -e "."
       - name: Test package
         run: |
           python -m unittest
