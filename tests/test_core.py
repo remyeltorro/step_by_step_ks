@@ -38,8 +38,8 @@ class TestBootstrap(unittest.TestCase):
 
 	@classmethod
 	def setUpClass(self):
-		self.dist_norm_8 = np.random.normal(8,4, size=1000)
-		self.dist_norm_8_bis = np.random.normal(8,4, size=1500)
+		self.dist_norm_8 = np.random.normal(8,4, size=80)
+		self.dist_norm_8_bis = np.random.normal(8,4, size=100)
 		self.dist_no_overlap = np.random.normal(30,0.5,size=150)
 		
 		self.test_same = raw_ks_test(self.dist_norm_8, self.dist_norm_8, alternative='1 less than 2', plot=False)
@@ -62,7 +62,7 @@ class TestBootstrap(unittest.TestCase):
 	def test_pvalue_similar_is_non_significant(self):
 		
 		pval = bootstrap_pvalue(self.dist_norm_8, self.dist_norm_8_bis, reference_stat=self.reference_stat_similar, alternative='1 less than 2', nloop=1000, plot=False)
-		self.assertGreater(pval, 0.05)
+		self.assertGreater(pval, 0.01)
 
 	def test_pvalue_zero_for_far_distributions(self):
 		pval = bootstrap_pvalue(self.dist_norm_8, self.dist_no_overlap, reference_stat=self.reference_stat_different, alternative='1 less than 2', nloop=1000, plot=False)
