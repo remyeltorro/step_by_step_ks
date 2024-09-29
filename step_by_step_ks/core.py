@@ -37,7 +37,7 @@ def randomize(list_in):
     random.shuffle(shuff)
     return shuff
 
-def raw_ks_test(data1, data2, alternative='1 less than 2', plot=True):
+def raw_ks_test(data1, data2, alternative='1 less than 2', plot=True, save_ecdf_path=None):
 
     """
     Perform a custom Kolmogorov-Smirnov (KS) test to compare two empirical distributions.
@@ -122,11 +122,13 @@ def raw_ks_test(data1, data2, alternative='1 less than 2', plot=True):
         ax.vlines(peak,ecdf2.cdf.evaluate(peak),ecdf1.cdf.evaluate(peak),color='k',linestyle='--',label=f'S = {round(stat,3)}\nxS = {round(peak,3)}')
         ax.legend()
         plt.tight_layout()
+        if save_ecdf_path is not None:
+            plt.savefig(save_ecdf_path, bbox_inches='tight',dpi=300)
         plt.show()
     
     return {"stat": stat, "location": peak}
 
-def bootstrap_pvalue(data1, data2, reference_stat, alternative="1 less than 2", nloop=1000, respect_ratio=True, replacement=False, bootstrap_size=None, plot=True, *args):
+def bootstrap_pvalue(data1, data2, reference_stat, alternative="1 less than 2", nloop=1000, respect_ratio=True, replacement=False, bootstrap_size=None, plot=True, save_stat_distribution_path=None, *args):
 
     """
     Estimate the p-value using a bootstrap method based on the KS statistic.
@@ -226,11 +228,13 @@ def bootstrap_pvalue(data1, data2, reference_stat, alternative="1 less than 2", 
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
         plt.tight_layout()
+        if save_stat_distribution_path is not None:
+            plt.savefig(save_stat_distribution_path,bbox_inches="tight",dpi=300)
         plt.show()    
     
     return pvalue
 
-def ks_test(data1, data2, alternative='1 less than 2', plot_ecdf=False, bootstrap_loops=1000, bootstrap_respect_ratio=True, bootstrap_replacement=False, bootstrap_size=None, bootstrap_plot=True):
+def ks_test(data1, data2, alternative='1 less than 2', plot_ecdf=False, bootstrap_loops=1000, bootstrap_respect_ratio=True, bootstrap_replacement=False, bootstrap_size=None, bootstrap_plot=True, save_ecdf_path=None, save_stat_distribution_path=None):
     
     """
     Performs a two-sample Kolmogorov-Smirnov (KS) test with an optional bootstrap procedure for p-value estimation.
@@ -286,9 +290,9 @@ def ks_test(data1, data2, alternative='1 less than 2', plot_ecdf=False, bootstra
     >>> print(f"KS Statistic: {result['stat']}, P-value: {result['pvalue']}")
     """
     
-    test = raw_ks_test(data1, data2, alternative=alternative, plot=plot_ecdf)
+    test = raw_ks_test(data1, data2, alternative=alternative, plot=plot_ecdf, save_ecdf_path=save_ecdf_path)
     reference_stat = test['stat']
-    pvalue = bootstrap_pvalue(data1, data2, reference_stat, alternative=alternative, plot=bootstrap_plot, nloop=bootstrap_loops, replacement=bootstrap_replacement, bootstrap_size=bootstrap_size)
+    pvalue = bootstrap_pvalue(data1, data2, reference_stat, alternative=alternative, plot=bootstrap_plot, nloop=bootstrap_loops, replacement=bootstrap_replacement, bootstrap_size=bootstrap_size, save_stat_distribution_path=save_stat_distribution_path)
     test.update({'pvalue': pvalue})
 
     return test
