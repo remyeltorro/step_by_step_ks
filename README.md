@@ -19,8 +19,7 @@ To use the package, you must install Python3, e.g. through [Anaconda](https://ww
 Download and extract the ZIP file, enter the folder and open a console locally.
 
 ``` bash
-#pip install numpy scipy matplotlib random
-pip install -e .
+pip install step_by_step_ks
 ```
 
 How to use
