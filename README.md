@@ -40,3 +40,18 @@ from step_by_step_ks import raw_ks_test
 test = raw_ks_test(data1, data2, alternative='1 less than 2', plot=True)
 ```
 
+![ECDF plot](https://github.com/remyeltorro/step_by_step_ks/blob/main/assets/ecdf.png?raw=true)
+
+Then to estimate the p-value one can perform a bootstrap to measure the KS statistic under the hypothesis that both distributions were sampled from the same distribution:
+
+```python
+from step_by_step_ks import raw_ks_test
+
+test = raw_ks_test(data1, data2, alternative='1 less than 2', plot=True)
+reference_stat = test['stat']
+
+pvalue = bootstrap_pvalue(data1, data2, reference_stat, alternative='1 less than 2', plot=True, nloop=1000, replacement=False)
+pvalue
+```
+
+![KS statistic distribution](https://github.com/remyeltorro/step_by_step_ks/blob/main/assets/stat_dist.png?raw=true)
