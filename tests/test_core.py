@@ -38,8 +38,8 @@ class TestBootstrap(unittest.TestCase):
 
 	@classmethod
 	def setUpClass(self):
-		self.dist_norm_8 = np.random.normal(8,4, size=100)
-		self.dist_norm_8_bis = np.random.normal(8,4, size=300)
+		self.dist_norm_8 = np.random.normal(8,4, size=1000)
+		self.dist_norm_8_bis = np.random.normal(8,4, size=1500)
 		self.dist_no_overlap = np.random.normal(30,0.5,size=150)
 		
 		self.test_same = raw_ks_test(self.dist_norm_8, self.dist_norm_8, alternative='1 less than 2', plot=False)
