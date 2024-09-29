@@ -1,6 +1,4 @@
 ![ico17](https://github.com/remyeltorro/step_by_step_ks/actions/workflows/test.yml/badge.svg)
-![ico4](https://img.shields.io/pypi/v/step_by_step_ks)
-![ico6](https://img.shields.io/github/downloads/remyeltorro/step_by_step_ks/total)
 ![ico5](https://img.shields.io/pypi/dm/step_by_step_ks)
 ![GitHub repo size](https://img.shields.io/github/repo-size/remyeltorro/step_by_step_ks)
 ![GitHub License](https://img.shields.io/github/license/remyeltorro/step_by_step_ks?link=https%3A%2F%2Fgithub.com%2Fremyeltorro%step_by_step_ks%2Fblob%2Fmain%2FLICENSE)
@@ -16,8 +14,11 @@ Installation
 
 To use the package, you must install Python3, e.g. through [Anaconda](https://www.anaconda.com/download). The package relies on standard Python libraries: `numpy`, `scipy`, `random`, `matplotlib`.
 
+Download and extract the ZIP of the repository. Open a console in the unzipped folder and type:
+
 ``` bash
-pip install step_by_step_ks
+# pip install numpy scipy matplotlib
+pip install -e .
 ```
 
 How to use
