@@ -16,8 +16,6 @@ Installation
 
 To use the package, you must install Python3, e.g. through [Anaconda](https://www.anaconda.com/download). The package relies on standard Python libraries: `numpy`, `scipy`, `random`, `matplotlib`.
 
-Download and extract the ZIP file, enter the folder and open a console locally.
-
 ``` bash
 pip install step_by_step_ks
 ```
