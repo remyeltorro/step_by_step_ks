@@ -1,4 +1,4 @@
-This Python package performs a step by step 2-sample Kolmogorov-Smirnov test supported by figures. The p-value is computed using a customizable Monte-Carlo method. 
+This Python package performs a 2-sample Kolmogorov-Smirnov test, step by step and supported by figures. The p-value is computed using a customizable bootstrap method. 
 
 Installation
 ============
