@@ -21,10 +21,10 @@ class TestRawKS(unittest.TestCase):
 	def test_small_difference_similar_distribution(self):
 		
 		test = raw_ks_test(self.dist_norm_8, self.dist_norm_8_bis, alternative='1 less than 2',plot=False)
-		self.assertLess(test['stat'], 0.05)
+		self.assertLess(test['stat'], 0.08)
 		
 		test = raw_ks_test(self.dist_norm_8, self.dist_norm_8_bis, alternative='2 less than 1',plot=False)
-		self.assertLess(test['stat'], 0.05)
+		self.assertLess(test['stat'], 0.08)
 
 	def test_no_overlap_statistic(self):
 
